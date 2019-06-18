@@ -7,10 +7,14 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
-.settings
+.settings/
 *eclipse*
+<<<<<<< HEAD
 .classpath
 .project
+=======
+*.log
+>>>>>>> a0b4472a3148ecd5af573e799bb6bc80119151ec
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
