@@ -15,7 +15,11 @@ public abstract class AllergoConstants {
 	public static final String KEY_LOCAL_BACKUP = "allergo.local.backup";
 
 	/** 默认allergo配置文件 */
+<<<<<<< HEAD
 	public static final String DEF_CONFIG_FILE = "classpath:eroica_base.properties";
+=======
+	public static final String DEF_CONFIG_FILE = "classpath:allergo.properties";
+>>>>>>> edae9602bc5636e9d5abddd77369682fe5c2e737
 
 	/** 默认allergo配置文件 property name */
 	public static final String KEY_CONFIG_FILE = "allergo.config.file";
