@@ -14,5 +14,6 @@
 			<artifactId>Eroica2-common</artifactId>
 			<version>1.0</version>
 		</dependency>
+		
 	</dependencies>
 </project>
