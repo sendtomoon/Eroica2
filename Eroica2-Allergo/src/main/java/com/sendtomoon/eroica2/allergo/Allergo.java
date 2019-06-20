@@ -107,10 +107,10 @@ public class Allergo extends AllergoConstants {
 			InputStream resourceInput = null;
 			if (configResource == null || (configResource = configResource.trim()).length() == 0) {
 				configResource = AllergoConstants.DEF_CONFIG_FILE;
-
 				try {
 					resourceInput = ResourceUtils.getURL(configResource).openStream();
 				} catch (FileNotFoundException ex) {
+					
 				}
 			} else {
 				resourceInput = ResourceUtils.getURL(configResource).openStream();

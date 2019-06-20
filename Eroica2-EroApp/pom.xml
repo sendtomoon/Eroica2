@@ -11,7 +11,22 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.sendtomoon</groupId>
-			<artifactId>Eroica2-commons</artifactId>
+			<artifactId>Eroica2-common</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sendtomoon</groupId>
+			<artifactId>Eroica2-Allergo</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sendtomoon</groupId>
+			<artifactId>Eroica2-Adagio</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sendtomoon</groupId>
+			<artifactId>Eroica2-DOS</artifactId>
 			<version>1.0</version>
 		</dependency>
 	</dependencies>
