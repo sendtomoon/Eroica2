@@ -46,7 +46,7 @@ public abstract class AllergoConstants {
 	/***
 	 * 默认Allergo资源根路径
 	 */
-	public static final String DEF_ROOT_PATH = "/eroicaConfs";
+	public static final String DEF_ROOT_PATH = "/configs";
 
 	/***
 	 * Allergo资源组：组件仓库

@@ -29,5 +29,10 @@
 			<artifactId>Eroica2-DOS</artifactId>
 			<version>1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 </project>

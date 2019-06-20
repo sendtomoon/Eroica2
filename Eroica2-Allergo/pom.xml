@@ -14,6 +14,27 @@
 			<artifactId>Eroica2-common</artifactId>
 			<version>1.0</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-lgpl</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-lgpl</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>com.googlecode</groupId>
+			<artifactId>concurrentlinkedhashmap-lru</artifactId>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 </project>
