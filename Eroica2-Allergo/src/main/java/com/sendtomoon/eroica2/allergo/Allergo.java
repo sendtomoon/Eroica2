@@ -26,7 +26,7 @@ import com.sendtomoon.eroica2.allergo.spring.AllergoResourceListener;
  */
 public class Allergo extends AllergoConstants {
 
-	static volatile AllergoContext allergoContext;
+	static volatile EroicaContext eroicaContext;
 
 	private volatile static ConfigurableApplicationContext context = null;
 
@@ -39,14 +39,14 @@ public class Allergo extends AllergoConstants {
 			MDCUtil.set();
 			loadConfigResource();
 			context = new RootContextBean();
-			allergoContext = context.getBean(AllergoContext.class);
+			eroicaContext = context.getBean(EroicaContext.class);
 			Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
 				public void run() {
 					System.out.println("Eroica<" + Allergo.getAppName() + "> shutdown hook now" + ",datetime="
 							+ DateFormat.getDateTimeInstance().format(new Date()) + ".");
 					if (context != null)
 						context.close();
-//					com.alibaba.dubbo.config.ProtocolConfig.destroyAll();
+					com.alibaba.dubbo.config.ProtocolConfig.destroyAll();
 				}
 			}, "EroicaShutdownHook"));
 		} catch (Exception ex) {
@@ -65,39 +65,39 @@ public class Allergo extends AllergoConstants {
 	}
 
 	public static String getAppName() {
-		return allergoContext.getAppName();
+		return eroicaContext.getAppName();
 	}
 
 	public static String getDomainId() {
-		return allergoContext.getDomainId();
+		return eroicaContext.getDomainId();
 	}
 
 	public static String get(String group, String key) {
-		return allergoContext.get(group, key);
+		return eroicaContext.get(group, key);
 	}
 
 	public static boolean exists(String group, String key) {
-		return allergoContext.exists(group, key);
+		return eroicaContext.exists(group, key);
 	}
 
 	public static boolean registerListener(AllergoResourceListener listener) {
-		return allergoContext.registerListener(listener);
+		return eroicaContext.registerListener(listener);
 	}
 
 	public static boolean unregisterListener(AllergoURL allergoURL) {
-		return allergoContext.unregisterListener(allergoURL);
+		return eroicaContext.unregisterListener(allergoURL);
 	}
 
 	public static Charset getCharset() {
-		return allergoContext.getCharset();
+		return eroicaContext.getCharset();
 	}
 
 	public static AllergoManager getManager() {
-		return allergoContext.getDefaultManager();
+		return eroicaContext.getDefaultManager();
 	}
 
-	public static AllergoContext getAllergoContext() {
-		return allergoContext;
+	public static EroicaContext getAllergoContext() {
+		return eroicaContext;
 	}
 
 	private static synchronized void loadConfigResource() throws AllergoException {
@@ -110,7 +110,7 @@ public class Allergo extends AllergoConstants {
 				try {
 					resourceInput = ResourceUtils.getURL(configResource).openStream();
 				} catch (FileNotFoundException ex) {
-					
+
 				}
 			} else {
 				resourceInput = ResourceUtils.getURL(configResource).openStream();
@@ -177,7 +177,7 @@ public class Allergo extends AllergoConstants {
 	 * @param listener
 	 */
 	public static void setListener(String group, String key, ConfigChangedListener listener) {
-		allergoContext.getDefaultManager().setListener(group, key, listener);
+		eroicaContext.getDefaultManager().setListener(group, key, listener);
 	}
 
 	/***
@@ -187,7 +187,7 @@ public class Allergo extends AllergoConstants {
 	 * @param listener
 	 */
 	public static void removeListener(String group, String key, ConfigChangedListener listener) {
-		allergoContext.getDefaultManager().removeListener(group, key, listener);
+		eroicaContext.getDefaultManager().removeListener(group, key, listener);
 	}
 
 }
