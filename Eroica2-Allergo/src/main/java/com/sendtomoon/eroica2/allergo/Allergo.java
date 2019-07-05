@@ -21,7 +21,7 @@ import com.sendtomoon.eroica2.allergo.log4j.DefaultLogUtils;
 import com.sendtomoon.eroica2.allergo.spring.AllergoResourceListener;
 
 /**
- * 读取配置文件
+ * 读取配置文件 配置allergo环境
  * 
  */
 public class Allergo extends AllergoConstants {
