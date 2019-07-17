@@ -1,6 +1,5 @@
 package com.sendtomoon.eroica2.allergo;
 
-import com.alibaba.dubbo.common.extension.ExtensionLoader;
 import org.springframework.beans.FatalBeanException;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.FactoryBean;
