@@ -13,7 +13,6 @@ public class URLStreamHandlerFactoryUtils {
 	public static void registerAllergoURLStreamHandler(final AllergoManager allergoManager) {
 		try {
 			URL.setURLStreamHandlerFactory(new URLStreamHandlerFactory() {
-
 				@Override
 				public URLStreamHandler createURLStreamHandler(String protocol) {
 					if ("allergo".equals(protocol)) {
@@ -21,7 +20,6 @@ public class URLStreamHandlerFactoryUtils {
 					}
 					return null;
 				}
-
 			});
 		} catch (Error err) {
 			LogFactory.getLog(URLStreamHandlerFactoryUtils.class)
