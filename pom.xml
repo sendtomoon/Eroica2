@@ -13,6 +13,7 @@
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<spring.version>5.1.6.RELEASE</spring.version>
 		<jetty.version>9.4.9.v20180320</jetty.version>
+		<Eroica.version>1.0</Eroica.version>
 	</properties>
 	<profiles>
 		<profile>
@@ -38,6 +39,14 @@
 		<module>Eroica2-dubbo</module>
 		<module>Eroica2-test</module>
 		<module>Eroica2-apacheDubbo</module>
+		<module>Eroica2-bootstrap</module>
+		<module>Eroica2-dubbox</module>
+		<module>Eroica2-RunningFly</module>
+		<module>Eroica2-support-mq</module>
+		<module>Eroica2-support-redis</module>
+		<module>Eroica2-support</module>
+		<module>Eroica2-support-kafka</module>
+		<module>Eroica2-SSO</module>
 	</modules>
 
 	<dependencies>
