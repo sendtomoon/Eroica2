@@ -2,7 +2,7 @@ package com.sendtomoon.eroica2.allergo;
 
 import java.util.Properties;
 
-/***
+/**
  * Allergo关键配置项
  */
 class AllergoAttrs {
@@ -49,12 +49,6 @@ class AllergoAttrs {
 	 */
 	protected String resolveAppName() {
 		String appName = getProperty(AllergoConstants.KEY_APP_NAME);
-		if (appName == null) {
-			appName = getProperty(AllergoConstants.KEY_APP_NAME_1);
-		} else {
-			setProperty(AllergoConstants.KEY_APP_NAME_1, appName);
-		}
-		//
 		if (appName == null || (appName = appName.trim()).length() == 0) {
 			_throwEx(AllergoConstants.KEY_APP_NAME);
 		}

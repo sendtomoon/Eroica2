@@ -21,6 +21,10 @@ import com.sendtomoon.eroica.common.utils.EroicaMeta;
 import com.sendtomoon.eroica.common.utils.InstanceSystemPropertyUtils;
 import com.sendtomoon.eroica.common.utils.NetUtils;
 
+/**
+ * 屏幕打印Logo，初始化主机配置参数
+ *
+ */
 public class AllergoInitializer extends PropertyPlaceholderConfigurer implements InitializingBean {
 
 	private Log startupLogger;
@@ -37,7 +41,6 @@ public class AllergoInitializer extends PropertyPlaceholderConfigurer implements
 		try {
 			printLogo();
 			doInit();
-			//
 		} catch (AllergoException ex) {
 			startupLogger.error(ex.getMessage(), ex);
 			throw ex;
@@ -46,9 +49,13 @@ public class AllergoInitializer extends PropertyPlaceholderConfigurer implements
 		}
 	}
 
+	/**
+	 * 读取主机配置文件，初始化一些实例参数
+	 */
 	protected synchronized void doInit() {
 		String instanceIp = NetUtils.getLocalHost();
 		AllergoManager defaultManager = this.defaultManager;
+		// 读取主机配置文件
 		if (instanceIp != null) {
 			loadInstanceProperties(defaultManager, instanceIp);
 		}
@@ -85,6 +92,9 @@ public class AllergoInitializer extends PropertyPlaceholderConfigurer implements
 		}
 	}
 
+	/**
+	 * Logo打印在屏幕
+	 */
 	protected void printLogo() {
 		InputStream input = this.getClass().getResourceAsStream("/META-INF/eroica/logo.txt");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(input));

@@ -10,6 +10,10 @@ import com.sendtomoon.eroica2.allergo.impl.ClassPathAllergoManagerFactory;
 import com.sendtomoon.eroica2.allergo.impl.LocalAllergoManagerFactory;
 import com.sendtomoon.eroica2.allergo.impl.ZookeeperAllergoManagerFactory;
 
+/**
+ *  配置文件管理工厂类，4种配置文件管理模式，推荐使用zookeeper
+ *
+ */
 public class AllergoManagerFactoryBean implements FactoryBean<AllergoManager>, InitializingBean, DisposableBean {
 
 	private volatile AllergoManager manager;

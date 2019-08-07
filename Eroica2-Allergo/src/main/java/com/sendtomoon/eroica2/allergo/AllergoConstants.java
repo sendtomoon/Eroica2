@@ -3,10 +3,7 @@ package com.sendtomoon.eroica2.allergo;
 public abstract class AllergoConstants {
 
 	/** 应用名 */
-	public static final String KEY_APP_NAME = "allergo.app.name";
-
-	/** 应用名 */
-	public static final String KEY_APP_NAME_1 = "eoapp.name";
+	public static final String KEY_APP_NAME = "eoapp.name";
 
 	/** 资源管理实现 */
 	public static final String KEY_MANAGER = "allergo.manager";
