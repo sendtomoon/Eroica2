@@ -54,11 +54,11 @@ public class AllergoInitializer extends PropertyPlaceholderConfigurer implements
 	 */
 	protected synchronized void doInit() {
 		String instanceIp = NetUtils.getLocalHost();
-		AllergoManager defaultManager = this.defaultManager;
-		// 读取主机配置文件
-		if (instanceIp != null) {
-			loadInstanceProperties(defaultManager, instanceIp);
-		}
+//		AllergoManager defaultManager = this.defaultManager;
+//		// 读取主机配置文件
+//		if (instanceIp != null) {
+//			loadInstanceProperties(defaultManager, instanceIp);
+//		}
 		FomatterStringBuilder info = new FomatterStringBuilder();
 		info.append(AllergoConstants.KEY_APP_NAME, System.getProperty(AllergoConstants.KEY_APP_NAME));
 		info.append(AllergoConstants.KEY_DOMAIN_ID, System.getProperty(AllergoConstants.KEY_DOMAIN_ID));
