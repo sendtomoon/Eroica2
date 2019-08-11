@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		 http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		 http://www.springframework.org/schema/context   
+     http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<bean id="_root_def_allergo_mananger" class="com.sendtomoon.eroica2.allergo.AllergoManagerFactoryBean"> </bean>
+
+	<bean id="_root_allergo_Initializer" class="com.sendtomoon.eroica2.allergo.AllergoInitializer">
+		<property name="defaultManager" ref="_root_def_allergo_mananger" />
+	</bean>
+
+	<bean id="_root_allergo_context"
+		class="com.sendtomoon.eroica2.allergo.EroicaContextBean">
+		<property name="defaultManager"
+			ref="_root_def_allergo_mananger" />
+	</bean>
+
+	<bean id="_root_log4j_initialization"
+		class="com.sendtomoon.eroica2.allergo.log4j.Log4jInitializationFactory"
+		lazy-init="false">
+		<property name="allergoContext" ref="_root_allergo_context"></property>
+	</bean>
+
+	<bean id="_root_allergo_resource_listener_register"
+		class="com.sendtomoon.eroica2.allergo.spring.AllergoResourceListenerRegisterBean">
+		<property name="allergoContext" ref="_root_allergo_context"></property>
+	</bean>
+
+</beans>
