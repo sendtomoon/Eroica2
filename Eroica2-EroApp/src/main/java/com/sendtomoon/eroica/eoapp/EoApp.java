@@ -1,5 +1,7 @@
 package com.sendtomoon.eroica.eoapp;
 
+import org.springframework.context.ConfigurableApplicationContext;
+
 import com.sendtomoon.eroica2.allergo.Allergo;
 
 /**
@@ -12,7 +14,8 @@ public abstract class EoApp implements EoAppContext {
 
 	public synchronized static EoApp getInstance() {
 		if (eoApp == null) {
-			eoApp = Allergo.getSpringContext().getBean(EoApp.class);
+			ConfigurableApplicationContext cac = Allergo.getSpringContext();
+			eoApp = cac.getBean(EoApp.class);
 		}
 		return eoApp;
 	}
