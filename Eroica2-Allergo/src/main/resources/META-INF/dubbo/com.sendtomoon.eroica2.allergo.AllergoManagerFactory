@@ -1,0 +1,4 @@
+local=com.sendtomoon.eroica2.allergo.impl.LocalAllergoManagerFactory
+classpath=com.sendtomoon.eroica2.allergo.impl.ClassPathAllergoManagerFactory
+file=com.sendtomoon.eroica2.allergo.impl.LocalAllergoManagerFactory
+zookeeper=com.sendtomoon.eroica2.allergo.impl.ZookeeperAllergoManagerFactory
