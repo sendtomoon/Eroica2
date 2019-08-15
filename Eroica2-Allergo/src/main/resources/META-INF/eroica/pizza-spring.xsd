@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://www.sendtomoon.com/schema/eroica/allergo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:tool="http://www.springframework.org/schema/tool"
+	targetNamespace="http://www.pingan.com/schema/eroica/allergo">
+	
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+	<xsd:import namespace="http://www.springframework.org/schema/beans"/>
+	<xsd:import namespace="http://www.springframework.org/schema/tool"/>
+
+	<xsd:annotation>
+		<xsd:documentation><![CDATA[ Namespace support for the allergo  by Eroica. ]]></xsd:documentation>
+	</xsd:annotation>
+	
+	<xsd:complexType name="beanType">
+		<xsd:attribute name="name" type="xsd:string" use="optional" >
+			<xsd:annotation>
+				<xsd:documentation><![CDATA[ The bean name for current bean factory. ]]></xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="shareName" type="xsd:string" use="optional" >
+			<xsd:annotation>
+				<xsd:documentation><![CDATA[ The share bean name. ]]></xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="configURL" type="xsd:string" use="required">
+			<xsd:annotation>
+				<xsd:documentation><![CDATA[ allergo config URL. ]]></xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="type" type="xsd:string" use="optional">
+			<xsd:annotation>
+				<xsd:documentation><![CDATA[ allergo share bean type. ]]></xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="scope" type="xsd:string" use="optional" default="default">
+			<xsd:annotation>
+				<xsd:documentation><![CDATA[ Bean share scope, for:default,parent,eoapp,global,self . ]]></xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:anyAttribute namespace="##other" processContents="lax" />
+	</xsd:complexType>
+	
+	
+	<xsd:element name="bean" type="beanType">
+		<xsd:annotation> 
+			<xsd:documentation><![CDATA[ allergo share bean defined. ]]></xsd:documentation> 
+		</xsd:annotation>
+	</xsd:element>
+	
+	
+	
+</xsd:schema>
