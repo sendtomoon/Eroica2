@@ -1,0 +1,16 @@
+<allergo-global-vars>
+	<local>
+		<property name="nanga.kkk" value="abc" />
+	</local>
+
+	<stg1>
+		<property name="nanga.kkk" value="abc" />
+		<property name="nanga.kkk" value="abc" />
+	</stg1>
+
+	<prd>
+		<property name="nanga.kkk" value="ddd" />
+		<property name="nanga.kkk11" value="abc11" />
+	</prd>
+
+</allergo-global-vars>
