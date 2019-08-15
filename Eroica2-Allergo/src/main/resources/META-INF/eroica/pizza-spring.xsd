@@ -3,7 +3,7 @@
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:tool="http://www.springframework.org/schema/tool"
-	targetNamespace="http://www.pingan.com/schema/eroica/allergo">
+	targetNamespace="http://www.sendtomoon.com/schema/eroica/allergo">
 	
 	<xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
 	<xsd:import namespace="http://www.springframework.org/schema/beans"/>
