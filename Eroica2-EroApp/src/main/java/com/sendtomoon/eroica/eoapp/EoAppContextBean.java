@@ -50,7 +50,6 @@ public class EoAppContextBean extends EoApp implements EoAppContext, DisposableB
 		} else {
 			return lifecycle.isRunning();
 		}
-
 	}
 
 	public EoAppContextBean() {

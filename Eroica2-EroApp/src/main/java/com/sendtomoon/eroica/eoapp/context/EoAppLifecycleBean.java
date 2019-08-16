@@ -13,7 +13,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.SmartLifecycle;
 
-import com.pingan.pafa.pola.Pola;
+import com.sendtomoon.eroica.adagio.Pola;
 import com.sendtomoon.eroica.common.utils.MDCUtil;
 import com.sendtomoon.eroica2.allergo.Allergo;
 import com.sendtomoon.eroica2.allergo.classloader.AllergoClassLoader;
