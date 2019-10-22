@@ -31,8 +31,6 @@ public class AllergoManagerFactoryBean implements FactoryBean<AllergoManager>, I
 			throw new AllergoException("Allergo manager URL <" + managerURL + ">  format error ," + ex.getMessage(),
 					ex);
 		}
-//		ExtensionLoader<AllergoManagerFactory> factory = ExtensionLoader
-//				.getExtensionLoader(AllergoManagerFactory.class);
 		String name = _managerURL.getProtocol();
 		if (name.equals("zookeeper")) {
 			manager = new ZookeeperAllergoManagerFactory().create(_managerURL);
@@ -43,7 +41,6 @@ public class AllergoManagerFactoryBean implements FactoryBean<AllergoManager>, I
 		} else if (name.equals("local")) {
 			manager = new LocalAllergoManagerFactory().create(_managerURL);
 		}
-//		manager = factory.getExtension(name).create(_managerURL);
 	}
 
 	@Override

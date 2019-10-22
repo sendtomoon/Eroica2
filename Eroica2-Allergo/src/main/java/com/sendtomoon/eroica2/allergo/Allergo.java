@@ -103,6 +103,10 @@ public class Allergo extends AllergoConstants {
 		return eroicaContext;
 	}
 
+	/**
+	 * 加载 eroica_base.properties 配置文件
+	 * @throws AllergoException
+	 */
 	private static synchronized void loadConfigResource() throws AllergoException {
 		String configResource = null;
 		try {
@@ -113,7 +117,7 @@ public class Allergo extends AllergoConstants {
 				try {
 					resourceInput = ResourceUtils.getURL(configResource).openStream();
 				} catch (FileNotFoundException ex) {
-
+					
 				}
 			} else {
 				resourceInput = ResourceUtils.getURL(configResource).openStream();
