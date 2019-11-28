@@ -2,6 +2,7 @@ package com.sendtomoon.eroica.common.utils;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import org.apache.log4j.NDC;
 
@@ -87,7 +88,7 @@ public class MDCUtil {
 	}
 
 	public static String generateRequestId() {
-		return IdMaker.generate();
+		return UUID.randomUUID().toString();
 	}
 
 	public static void clear() {

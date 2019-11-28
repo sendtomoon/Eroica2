@@ -6,14 +6,7 @@ import java.util.Map;
 import org.springframework.ui.ModelMap;
 
 public class ServiceResponse extends EroicaDTO {
-	/**
-	 * @deprecated
-	 */
-	public static final String CODE_SUCCESS = "success";
-	/***
-	 * @deprecated
-	 */
-	public static final String CODE_FAIL = "fail";
+	
 	public static final String SERVICE_RESPONSE_RESULT = "SERVICE_RESPONSE_RESULT";
 
 	private Map model = null;
@@ -28,12 +21,6 @@ public class ServiceResponse extends EroicaDTO {
 
 	static final long serialVersionUID = 732373890158203233L;
 
-	/**
-	 * @deprecated
-	 */
-	public ServiceResponse() {
-		this.responseCode = CODE_SUCCESS;
-	}
 
 	public ServiceResponse(Map model) {
 		this.setResponseCode("0");
@@ -112,18 +99,6 @@ public class ServiceResponse extends EroicaDTO {
 			this.model = new HashMap();
 		}
 		this.model.put("responseCode", responseCode);
-	}
-
-	/**
-	 * @deprecated
-	 * @param success The sucess flag to set.
-	 */
-	public void setSuccess(boolean success) {
-		if (success) {
-			this.responseCode = CODE_SUCCESS;
-		} else {
-			this.responseCode = CODE_FAIL;
-		}
 	}
 
 	/**
