@@ -7,10 +7,7 @@ import com.sendtomoon.eroica.common.app.biz.ac.ApplicationControllerException;
 import com.sendtomoon.eroica.common.app.dto.ServiceRequest;
 import com.sendtomoon.eroica.common.app.dto.ServiceResponse;
 
-
-
-public class EoAppLocalApplicationController implements ApplicationController{
-
+public class EoAppLocalApplicationController implements ApplicationController {
 
 	@Override
 	public ServiceResponse handleRequest(ServiceRequest request)
