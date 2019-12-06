@@ -21,7 +21,6 @@ public class ServiceResponse extends EroicaDTO {
 
 	static final long serialVersionUID = 732373890158203233L;
 
-
 	public ServiceResponse(Map model) {
 		this.setResponseCode("0");
 		this.setModel(model);
