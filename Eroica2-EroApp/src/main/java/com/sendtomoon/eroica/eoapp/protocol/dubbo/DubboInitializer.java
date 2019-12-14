@@ -75,7 +75,7 @@ public class DubboInitializer implements SmartLifecycle, BeanFactoryPostProcesso
 	public void stop() {
 		isRunning = false;
 		// Dubbo协议，热部署重启不销毁，协议相关的配置变更无效
-		// com.alibaba.dubbo.config.ProtocolConfig.destroyAll();
+		com.alibaba.dubbo.config.ProtocolConfig.destroyAll();
 	}
 
 	@Override
