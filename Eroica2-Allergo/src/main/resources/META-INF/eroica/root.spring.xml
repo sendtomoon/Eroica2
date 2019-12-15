@@ -13,21 +13,19 @@
 		<property name="defaultManager" ref="_root_def_allergo_mananger" />
 	</bean>
 
-	<bean id="_root_allergo_context"
-		class="com.sendtomoon.eroica2.allergo.EroicaContextBean">
-		<property name="defaultManager"
-			ref="_root_def_allergo_mananger" />
+	<bean id="_root_allergo_context" class="com.sendtomoon.eroica2.allergo.EroicaContextBean">
+		<property name="defaultManager" ref="_root_def_allergo_mananger" />
 	</bean>
 
 	<bean id="_root_log4j_initialization"
 		class="com.sendtomoon.eroica2.allergo.log4j.Log4jInitializationFactory"
 		lazy-init="false">
-		<property name="allergoContext" ref="_root_allergo_context"></property>
+		<property name="allergoContext" ref="_root_allergo_context" />
 	</bean>
 
 	<bean id="_root_allergo_resource_listener_register"
 		class="com.sendtomoon.eroica2.allergo.spring.AllergoResourceListenerRegisterBean">
-		<property name="allergoContext" ref="_root_allergo_context"></property>
+		<property name="allergoContext" ref="_root_allergo_context" />
 	</bean>
 
 </beans>
