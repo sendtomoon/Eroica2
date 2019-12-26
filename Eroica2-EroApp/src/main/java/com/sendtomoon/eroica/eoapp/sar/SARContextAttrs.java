@@ -12,9 +12,6 @@ import com.sendtomoon.eroica.common.utils.EroicaConfigUtils;
 
 public class SARContextAttrs extends AbstractSARAttrs {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	// 基包
@@ -42,16 +39,11 @@ public class SARContextAttrs extends AbstractSARAttrs {
 
 	private volatile Set<String> plugins;
 
-	private volatile Class<?> bootClass;
-
 	private volatile int order;
 
-	SARContextAttrs(String sarName, Properties properties, Class<?> bootClass, Set<String> plugins,
-			Properties eoappProperties) {
+	SARContextAttrs(String sarName, Properties properties, Set<String> plugins, Properties eoappProperties) {
 		super(properties, eoappProperties);
 		this.sarName = sarName;
-		this.bootClass = bootClass;
-		//
 		this.plugins = plugins;
 
 		plugins.add("consumer");
@@ -97,11 +89,12 @@ public class SARContextAttrs extends AbstractSARAttrs {
 				basePackageList.toArray(basePackages);
 				this.basePackages = basePackages;
 			}
-		} else if (this.bootClass != null && this.bootClass.getPackage() != null) {
-			String pgName = this.bootClass.getPackage().getName();
-			if (pgName != null && pgName.length() > 0)
-				this.basePackages = new String[] { pgName };
 		}
+//		else if (this.bootClass != null && this.bootClass.getPackage() != null) {
+//			String pgName = this.bootClass.getPackage().getName();
+//			if (pgName != null && pgName.length() > 0)
+//				this.basePackages = new String[] { pgName };
+//		}
 		Object[] pluginsArrays = plugins.toArray();
 		for (Object pluginName : pluginsArrays) {
 			String name = (String) pluginName;
@@ -130,10 +123,6 @@ public class SARContextAttrs extends AbstractSARAttrs {
 
 	public String[] getBasePackages() {
 		return basePackages;
-	}
-
-	public Class<?> getBootClass() {
-		return bootClass;
 	}
 
 }
