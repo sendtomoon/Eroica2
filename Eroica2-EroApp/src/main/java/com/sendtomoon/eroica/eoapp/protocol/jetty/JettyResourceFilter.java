@@ -124,8 +124,8 @@ public class JettyResourceFilter implements Filter {
 			return true;
 		} else if (uri.equals("/index.html")) {
 			OutputStream output = response.getOutputStream();
-			output.write(("<!DOCTYPE HTML><html><head><meta charset=\"utf-8\" /><title>欢迎使用Pafa5！</title></head>"
-					+ "<body><h1>欢迎使用Pafa" + EroicaMeta.VERSION + "！</h1> by Jetty8.</body></html>")
+			output.write(("<!DOCTYPE HTML><html><head><meta charset=\"utf-8\" /><title>欢迎使用Eroica！</title></head>"
+					+ "<body><h1>欢迎使用Eroica" + EroicaMeta.VERSION + "！</h1> by Jetty8.</body></html>")
 					.getBytes("UTF-8"));
 			output.flush();
 			return true;
