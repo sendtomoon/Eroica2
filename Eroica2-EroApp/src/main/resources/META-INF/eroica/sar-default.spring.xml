@@ -36,7 +36,7 @@
 		<property name="messageSource" ref="messageSource" />
 	</bean>
 
-	<bean id="_sar_def_dispatcher" name="_sar_local_pafa_ac"
+	<bean id="_sar_def_dispatcher" name="_sar_local_eroica_ac"
 		class="com.sendtomoon.eroica.eoapp.sar.context.DefaultSARDispatcherBean">
 		<property name="messageSource" ref="messageSource" />
 	</bean>
