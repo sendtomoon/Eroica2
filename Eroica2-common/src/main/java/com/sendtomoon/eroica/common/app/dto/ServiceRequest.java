@@ -98,29 +98,4 @@ public class ServiceRequest extends EroicaDTO {
 		}
 	}
 
-	public SessionDTO getSessionDTO() {
-		Object data = parameters.get(SESSION_DTO);
-		if (data != null) {
-			if (data instanceof SessionDTO) {
-				return (SessionDTO) data;
-			} else if (data instanceof Map) {
-				SessionDTO dto = new SessionDTO();
-				Map<Object, Object> map = (Map<Object, Object>) data;
-				Object value = map.get("txnId");
-				if (value != null)
-					dto.setTxnId(value.toString());
-				value = map.get("userID");
-				if (value != null)
-					dto.setUserId(value.toString());
-				parameters.put(SESSION_DTO, dto);
-				return dto;
-			}
-		}
-		return null;
-	}
-
-	public void setSessionDTO(SessionDTO sessionDTO) {
-		parameters.put(SESSION_DTO, sessionDTO);
-	}
-
 }
