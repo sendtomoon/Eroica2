@@ -34,6 +34,10 @@ public class EoAppContextBean extends EoApp implements EoAppContext, DisposableB
 
 	private volatile EoAppSpringContext springContext;
 
+	public EoAppContextBean() {
+
+	}
+
 	public SARContext getSARContext(String sarName) {
 		return getSARContext(sarName, true);
 	}
@@ -52,7 +56,38 @@ public class EoAppContextBean extends EoApp implements EoAppContext, DisposableB
 		}
 	}
 
-	public EoAppContextBean() {
+	@Override
+	public synchronized boolean startup() {
+		try {
+			// 判断生命周期是否在初始化中
+			if (!initEoAppLifecycle()) {
+				return false;
+			}
+
+			this.lifecycle.start();
+
+			this.springContext = this.lifecycle.getSpringContext();
+			boolean b = lifecycle.isRunning();
+			return b;
+		} catch (Throwable ex) {
+			logger.error(ex.getMessage(), ex);
+			return false;
+		}
+	}
+
+	private boolean initEoAppLifecycle() {
+		try {
+			if (rootContext != null && lifecycle != null && lifecycle.isRunning()) {
+				return false;
+			}
+			rootContext = new EoAppRootContext();
+			this.lifecycle = rootContext.getBean(EoAppLifecycle.class);
+			lifecycle.setOriginalServletContext(this.originalServletContext);
+			return true;
+		} catch (Throwable ex) {
+			logger.error(ex.getMessage(), ex);
+			return false;
+		}
 
 	}
 
@@ -123,41 +158,6 @@ public class EoAppContextBean extends EoApp implements EoAppContext, DisposableB
 		} else {
 			throw new EoAppException("Eroica<" + Allergo.getAppName() + "> startup failed or shutdowned!");
 		}
-	}
-
-	@Override
-	public synchronized boolean startup() {
-		try {
-			// 判断生命周期是否在初始化中
-			if (!initEoAppLifecycle()) {
-				return false;
-			}
-
-			this.lifecycle.start();
-
-			this.springContext = this.lifecycle.getSpringContext();
-			boolean b = lifecycle.isRunning();
-			return b;
-		} catch (Throwable ex) {
-			logger.error(ex.getMessage(), ex);
-			return false;
-		}
-	}
-
-	private boolean initEoAppLifecycle() {
-		try {
-			if (rootContext != null && lifecycle != null && lifecycle.isRunning()) {
-				return false;
-			}
-			rootContext = new EoAppRootContext();
-			this.lifecycle = rootContext.getBean(EoAppLifecycle.class);
-			lifecycle.setOriginalServletContext(this.originalServletContext);
-			return true;
-		} catch (Throwable ex) {
-			logger.error(ex.getMessage(), ex);
-			return false;
-		}
-
 	}
 
 	public void handleWebRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException {
