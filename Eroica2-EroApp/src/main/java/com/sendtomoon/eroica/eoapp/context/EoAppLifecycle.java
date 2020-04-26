@@ -9,13 +9,12 @@ import com.sendtomoon.eroica.eoapp.context.config.EoAppConfigProperties;
 public interface EoAppLifecycle extends Lifecycle {
 
 	ClassLoader getClassLoader();
-	
-	EoAppSpringContext  getSpringContext();
-	
-	
+
+	EoAppSpringContext getSpringContext();
+
 	EoAppConfigProperties getConfigProperties();
-	
+
 	void setOriginalServletContext(ServletContext servletContext);
-	
+
 	ServletContext getServletContext();
 }
