@@ -25,6 +25,7 @@ public abstract class BaseServiceClient implements IServiceClient, InitializingB
 	protected ApplicationContext applicationContext;
 
 	public BaseServiceClient() {
+		
 	}
 
 	@Override

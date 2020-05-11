@@ -22,6 +22,7 @@ public class DefaultActionClient extends BaseServiceClient {
 	private String eroicaAc;
 
 	public DefaultActionClient() {
+		
 	}
 
 	public DefaultActionClient(String name, String eroicaAc) {
