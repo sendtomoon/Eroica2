@@ -36,12 +36,13 @@ public class Allergo extends AllergoConstants {
 		long t1 = System.nanoTime();
 		startupLogger = DefaultLogUtils.getLogger();
 		try {
-			// 日志设置
+			// 使用MDC日志设置
 			MDCUtil.set();
 			// 加载基本资源，app基础配置文件 eroica_base.properties
 			loadConfigResource();
 			// Spring Framework 框架开始介入集成
 			context = new RootContextBean();
+			//从spring中拿到上下文类
 			eroicaContext = context.getBean(EroicaContext.class);
 			Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
 				public void run() {
@@ -117,7 +118,7 @@ public class Allergo extends AllergoConstants {
 			try {
 				resourceInput = ResourceUtils.getURL(configResource).openStream();
 			} catch (FileNotFoundException ex) {
-
+				System.err.println(ex);
 			}
 
 			if (resourceInput == null) {
