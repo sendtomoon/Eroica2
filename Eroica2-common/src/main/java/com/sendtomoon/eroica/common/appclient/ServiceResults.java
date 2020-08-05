@@ -58,7 +58,6 @@ public class ServiceResults extends MapDatas implements IServiceResults {
 				}
 				i++;
 			}
-			// this.put(key, list);
 			return list;
 		} else {
 			throw new AppClientException("Not be Collection.");
@@ -142,7 +141,6 @@ public class ServiceResults extends MapDatas implements IServiceResults {
 					list.add((T) v);
 				}
 			}
-			// this.put(key, list);
 			return list;
 		} else {
 			T t = this._toDTO(key, value, dtoClazz);
