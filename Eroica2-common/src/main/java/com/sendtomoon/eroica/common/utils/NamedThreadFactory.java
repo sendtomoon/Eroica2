@@ -4,10 +4,8 @@ package com.sendtomoon.eroica.common.utils;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
+public class NamedThreadFactory implements ThreadFactory {
 
-public class NamedThreadFactory implements ThreadFactory
-{
-	
 	private final AtomicInteger threadNum = new AtomicInteger(1);
 
 	private final String prefix;
@@ -16,30 +14,25 @@ public class NamedThreadFactory implements ThreadFactory
 
 	private final ThreadGroup group;
 
-
-	public NamedThreadFactory(String prefix)
-	{
-		this(prefix,false);
+	public NamedThreadFactory(String prefix) {
+		this(prefix, false);
 	}
 
-	public NamedThreadFactory(String prefix,boolean daemo)
-	{
+	public NamedThreadFactory(String prefix, boolean daemo) {
 		this.prefix = prefix;
 		this.daemo = daemo;
-        SecurityManager s = System.getSecurityManager();
-        this. group = ( s == null ) ? Thread.currentThread().getThreadGroup() : s.getThreadGroup();
+		SecurityManager s = System.getSecurityManager();
+		this.group = (s == null) ? Thread.currentThread().getThreadGroup() : s.getThreadGroup();
 	}
 
-	public Thread newThread(Runnable runnable)
-	{
+	public Thread newThread(Runnable runnable) {
 		String name = prefix + threadNum.getAndIncrement();
-        Thread ret = new Thread(group,runnable,name,0);
-        ret.setDaemon(daemo);
-        return ret;
+		Thread ret = new Thread(group, runnable, name, 0);
+		ret.setDaemon(daemo);
+		return ret;
 	}
 
-	public ThreadGroup getThreadGroup()
-	{
+	public ThreadGroup getThreadGroup() {
 		return group;
 	}
 }
