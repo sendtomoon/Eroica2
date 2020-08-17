@@ -53,7 +53,7 @@ public class ResponseCodeException extends RuntimeException {
 	/** SAR配置错误 */
 	public static String ERROR_SAR_CONFIG_ERROR = "900200";
 
-	/** PAPP配置错误 */
+	/** Eroica配置错误 */
 	public static String ERROR_APP_CONFIG_ERROR = "900201";
 
 	private static final long serialVersionUID = 1L;
