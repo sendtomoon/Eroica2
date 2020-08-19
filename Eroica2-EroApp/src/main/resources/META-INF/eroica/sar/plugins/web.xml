@@ -11,7 +11,6 @@
 		</property>
 	</bean>
 
-
 	<bean id="_sar_web_binding_initializer"
 		class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
 		<property name="conversionService">

@@ -33,6 +33,7 @@ public class Allergo extends AllergoConstants {
 	private volatile static Log startupLogger;
 
 	static {
+		
 		long t1 = System.nanoTime();
 		startupLogger = DefaultLogUtils.getLogger();
 		try {
