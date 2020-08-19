@@ -42,16 +42,14 @@ public class Allergo extends AllergoConstants {
 			loadConfigResource();
 			// Spring Framework 框架开始介入集成
 			context = new RootContextBean();
-			//从spring中拿到上下文类
+			// 从spring中拿到上下文类
 			eroicaContext = context.getBean(EroicaContext.class);
-			Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-				public void run() {
-					System.out.println("Eroica<" + Allergo.getAppName() + "> shutdown hook now" + ",datetime="
-							+ DateFormat.getDateTimeInstance().format(new Date()) + ".");
-					if (context != null)
-						context.close();
-					com.alibaba.dubbo.config.ProtocolConfig.destroyAll();
-				}
+			Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+				System.out.println("Eroica<" + Allergo.getAppName() + "> shutdown hook now" + ",datetime="
+						+ DateFormat.getDateTimeInstance().format(new Date()) + ".");
+				if (context != null)
+					context.close();
+				com.alibaba.dubbo.config.ProtocolConfig.destroyAll();
 			}, "EroicaShutdownHook"));
 		} catch (Exception ex) {
 			String msg = "Allergo initialized error,cause:" + ex.getMessage();
